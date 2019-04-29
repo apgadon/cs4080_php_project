@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 // Create database
-$sql = "CREATE DATABASE YEEP";
+$sql = "CREATE DATABASE phpproject_database";
 if ($conn->query($sql) === TRUE) {
     echo "Database created successfully";
 } else {
