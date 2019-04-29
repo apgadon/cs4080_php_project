@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO userInfo (firstName, lastName, email,password)
+$sql = "INSERT INTO userInfo (firstName, lastName, email, password)
 VALUES ('Rachael', 'Shima', 'reshima@cpp.edu', '12345')";
 
 
