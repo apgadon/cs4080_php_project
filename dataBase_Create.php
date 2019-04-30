@@ -48,7 +48,8 @@
 	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	user_id int(11) NOT NULL,
 	title VARCHAR(50) NOT NULL,
-	description VARCHAR(250) NOT NULL
+	description VARCHAR(250) NOT NULL,
+	image_name VARCHAR(250) NOT NULL
 	)";
 
 	if ($conn->query($sql) === TRUE) {

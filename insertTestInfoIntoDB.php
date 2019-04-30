@@ -16,9 +16,8 @@ if ($conn->connect_error) {
 $sql = "INSERT INTO userInfo (firstName, lastName, email, password)
 VALUES ('Rachael', 'Shima', 'reshima@cpp.edu', '12345')";
 
-
-
-
+$sql = "INSERT INTO userInfo (firstName, lastName, email, password)
+VALUES ('Onion', 'Onion', 'onion@onion.onion', 'onion')";
 
 if ($conn->query($sql) === TRUE) {
     echo "added successfully";

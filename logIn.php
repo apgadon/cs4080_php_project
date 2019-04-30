@@ -17,9 +17,6 @@
 		<div class="form-group">
 			<input type="submit" name="login" value="Log in" class="btn btn-primary"/>
 		</div>
-		<div class="form-group">
-			<input type="submit" name="newuser" value="Create a new account" class="btn btn-primary"/>
-		</div>
 		</fieldset>
 		</form>
 		</div>
@@ -42,7 +39,7 @@
 		if(mysqli_num_rows($resultset)>0) {
 		$_SESSION["userid"]=$row["id"];
 		$_SESSION["name"]=$row["firstName"]. " " .$row["lastName"];
-		header("location:user.php");
+		header("location:gallery.php");
 	}
 	else{
 		echo "Login details not correct! Please try again.";
