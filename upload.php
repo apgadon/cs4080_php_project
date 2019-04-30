@@ -28,6 +28,13 @@
 </div>
 
 <?php
+session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "phpproject_database";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);	
 if(isset($_POST["upload"]) && $_SESSION["userid"]) {
 $image_title=$_POST["image_title"];
 $img_description=$_POST["img_description"];
@@ -52,9 +59,9 @@ $new_image_name="$i".$image_name;
 $success=true;
 }
 }
-move_uploaded_file($_FILES["uploaded_file"]["tmp_name"],"uploads/".$new_image_name);
+move_uploaded_file($_FILES["uploaded_file"]["tmp_name"],"imageUploads/".$new_image_name);
 // image details into database table
-$insert_sql = "INSERT INTO user_gallery(id, user_id, image_title, image_description, image_name)
+$insert_sql = "INSERT INTO imagedescription(id, user_id, title, description, image_name)
 VALUES('', '". $_SESSION["userid"]."', '".$image_title."', '".$img_description."', '".$image_name."')";
 mysqli_query($conn, $insert_sql) or die("database error: ". mysqli_error($conn));
 }
