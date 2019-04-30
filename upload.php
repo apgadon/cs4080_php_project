@@ -42,7 +42,7 @@ session_start();
 			<li><a href="logIn.php">Login</a></li>				
 			<?php } ?>		
 		</ul>
-		
+		<?php if (isset($_SESSION['userid'])) { ?>
 		<form role="form" enctype='multipart/form-data' action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 		
 		<fieldset>
@@ -64,6 +64,7 @@ session_start();
 			</div>
 		</fieldset>
 		</form>
+		<?php } ?>		
 		</div>
 	</div>
 </div>
