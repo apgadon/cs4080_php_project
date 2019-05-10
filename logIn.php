@@ -2,23 +2,26 @@
 <div class="container">
 	<h2>RANGELEK Image Gallery</h2>
 	<div class="row">
-		<div class="col-md-4 col-md-offset-4 well">
+		<div class="navbar">
 			<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
-			<fieldset>
-			<legend>Login to Your Account</legend>
-		<div class="form-group">
-			<label for="name">Email Address: </label>
-			<input type="text" name="email" placeholder="Enter Your Email" required class="form-control" />
-		</div>
-		<div class="form-group">
-			<label for="name">Password</label>
-			<input type="password" name="password" placeholder="Enter Your Password" required class="form-control" />
-		</div>
-		<div class="form-group">
-			<input type="submit" name="login" value="Log in" class="btn btn-primary"/>
-		</div>
-		</fieldset>
-		</form>
+				<fieldset>
+					<legend>Login to Your Account</legend>
+					<div class="form-group">
+						<label for="name">Email Address: </label>
+						<input type="text" name="email" placeholder="Enter Your Email" required class="form-control" />
+					</div>
+					<div class="form-group">
+						<label for="name">Password</label>
+						<input type="password" name="password" placeholder="Enter Your Password" required class="form-control" />
+					</div>
+					<div class="form-group">
+						<input type="submit" name="login" value="Log in"/>
+					</div>
+				</fieldset>
+			</form>
+			<div class="form-group">
+				<a href="createaccount.php"><button>Create a New Account</button></a>
+			</div>
 		</div>
 	</div>
 </div>

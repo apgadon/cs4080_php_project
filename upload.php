@@ -1,44 +1,18 @@
 <link href="loginstyle.css" type="text/css" rel="stylesheet"/>
-<style>
-	.nav {
-		color: white;
-	  list-style-type: none;
-	  margin: 0;
-	  padding: 0;
-	  overflow: hidden;
-	  background-color: #333;
-	}
-
-	li {
-	  float: left;
-	}
-
-	li a {
-	  display: block;
-	  color: white;
-	  text-align: center;
-	  padding: 14px 16px;
-	  text-decoration: none;
-	}
-
-	li a:hover {
-	  background-color: #666;
-	}
-</style>
 <?php 
 session_start();
 ?>
 <div class="container">
 	<div class="row">
-		<div class="col-md-4 col-md-offset-4 well">
-		<ul class="nav navbar-nav navbar-left">
+		<div">
+		<ul class="nav">
 			<h2>Image Upload</h2>
 			<?php if (isset($_SESSION['userid'])) { ?>
-			<li><p class="navbar-text"><strong>Welcome!</strong> You're signed in as <strong><?php echo $_SESSION['name']; ?></strong></p></li>
+			<li><p><strong>Welcome!</strong> You're signed in as <strong><?php echo $_SESSION['name']; ?></strong></p></li>
 			<li><strong><a href="gallery.php">Back to Image Gallery</a> </strong></li>
 			<li><a href="logout.php">Log Out</a></li>	
 			<?php } else { ?>
-			<li><p class="navbar-text">You are Logged Out!</p></li><br>
+			<li><p>You are Logged Out!</p></li><br>
 			<li><a href="logIn.php">Login</a></li>				
 			<?php } ?>		
 		</ul>
@@ -85,7 +59,8 @@ if(isset($_POST["upload"]) && $_SESSION["userid"]) {
 	|| $_FILES["uploaded_file"]["type"]=="image/jpeg"
 	|| $_FILES["uploaded_file"]["type"]=="image/pjpeg"
 	|| $_FILES["uploaded_file"]["type"]=="image/png"
-	&& $_FILES["uploaded_file"]["size"]<20000) { if ($_FILES["uploaded_file"]["error"]>0) {
+	|| $_FILES["uploaded_file"]["type"]=="image/pdf"
+	&& $_FILES["uploaded_file"]["size"]<200000) { if ($_FILES["uploaded_file"]["error"]>0) {
 		echo "Return Code:".$_FILES["uploaded_file"]["error"]."";
 	} 
 	else {

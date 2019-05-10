@@ -1,70 +1,9 @@
 <link href="loginstyle.css" type="text/css" rel="stylesheet"/>
-<style>
-.nav {
-	color: white;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #666;
-}
-img{
-	cursor:zoom-in;
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-  /* Fade in tooltip */
-  opacity: 1;
-  transition: opacity 1s;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  background-color: grey;
-  color: #fff;
-  height: 15px;
-  width: 300px;
-  border-radius: 5px;
-  padding: 2.5px;
-  
-  z-index: 3;
-  
-  margin-left: 10px;
-  overflow: hidden;
-  
-  /* Fade in tooltip */
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: .90;
-}
-</style>
 
 <?php 
 session_start();
 ?>
-<title>phpzag.com : Gallery! </title>
+<title>Gallery! </title>
 
 <div class="container">	
 	
@@ -112,30 +51,15 @@ session_start();
 						<h5>
 							<?php echo $rows["title"]; ?>
 						</h5>
-						 <span id="safeInfo" class="tooltiptext"><?php echo $rows["description"];?></span>
-						<!--form method="post">
-						    <input type="submit" name="deleteName" id="delete" value="Delete" /><br/>
-						</form-->
+						<span id="safeInfo" class="tooltiptext"><?php echo $rows["description"];?></span>
+						<form action="delete.php" method="post">
+							<button value="<?php echo $rows["title"];?>" name="delete">Delete</button>
+						</form><br/>
+						
 					</li>
-					<?php }} 
-					/*
-					function testfun()
-					{
-					   echo $rows["image_title"];
-						$sqldel = "DELETE FROM imagedescription WHERE title='".$rows["image_title"]."'";
-						$conn->query($sqldel);
+					<?php 
+						}
 					}
-
-					if(array_key_exists('delete',$_POST)){
-					   testfun();
-					}
-					/*
-					function php_delete(){
-						echo $rows["image_title"];
-						$sqldel = "DELETE FROM imagedescription WHERE title='".$rows["image_title"]."'";
-						$conn->query($sqldel);
-					}
-					*/
 					?>
 				</ul>			
 			</div>
